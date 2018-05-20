@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Scala template
+.class
+.log
+target
+
+.idea/
+task_1/src/test/
+task_2/src/test/
+task_3/src/test/
+task_4/src/test/
+task_5/src/test/
+task_6/src/test/
+word-count/src/test/
