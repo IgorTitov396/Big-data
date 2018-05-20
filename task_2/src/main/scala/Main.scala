@@ -60,7 +60,9 @@ object Main extends App {
           seq.groupBy(getHH).mapValues(_.length).count(p => p._2 >= threshold)
         }
 
-        Try(seq.groupBy(trimDateTodd).mapValues(getActiveHours).values.sum.toString).toOption
+        val count = seq.groupBy(trimDateTodd).mapValues(getActiveHours).values.sum.toString
+
+        context.write(new OutputKeyReducerClass(key.toString + ":"), new OutputValueReducerClass(count))
       }.getOrElse(())
     }
 
@@ -110,7 +112,7 @@ object Main extends App {
       }
     }
 
-    val separator = "  "
+    val separator = "\t"
 
   }
 

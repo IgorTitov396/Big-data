@@ -106,6 +106,6 @@ object Utils {
     }
   }
 
-  val separator = "  "
+  val separator = "\t"
 
 }
